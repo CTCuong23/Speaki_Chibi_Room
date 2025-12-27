@@ -2,15 +2,18 @@
 
 public class TeleportGate : MonoBehaviour
 {
-    [SerializeField] Transform destination; // Điểm đến (kéo cái cổng bên kia vào đây)
+    [SerializeField] Transform destination; // Điểm đến (vẫn như cũ)
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Kiểm tra xem đối tượng va chạm có phải là Player (Speaki) không
         if (collision.CompareTag("Player"))
         {
-            // "Bốc" Speaki thả sang vị trí của destination
-            collision.transform.position = destination.position;
+            // CŨ: Dịch chuyển ngay lập tức gây nhức đầu
+            // collision.transform.position = destination.position;
+
+            // MỚI: Gọi TransitionManager để làm hiệu ứng mượt mà
+            // Chúng ta truyền vào: đối tượng cần dịch chuyển (Speaki) và điểm đến
+            TransitionManager.Instance.FadeAndTeleport(collision.transform, destination);
         }
     }
 }
