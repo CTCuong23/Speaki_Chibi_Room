@@ -10,11 +10,15 @@ public class Interactable : MonoBehaviour
     [Header("Cài đặt hình ảnh")]
     [SerializeField] GameObject emotePrefab; // Kéo Prefab trái tim vào đây
     [SerializeField] Transform spawnPoint;   // Điểm xuất hiện (thường là trên đầu Speaki)
+
+    [Header("Mở khóa cổng")]
+    [SerializeField] GameObject portalToMainScene;
     void Start()
     {
         hintText.SetActive(false);
         // Tự động lấy component Audio Source trên cùng object này
         audioSource = GetComponent<AudioSource>();
+        portalToMainScene.SetActive(false);
     }
 
     void Update()
@@ -46,6 +50,11 @@ public class Interactable : MonoBehaviour
         }
 
         Debug.Log("Cuayo with Love!");
+
+        if (portalToMainScene != null)
+        {
+            portalToMainScene.SetActive(true); // Hiện cái cổng lên
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

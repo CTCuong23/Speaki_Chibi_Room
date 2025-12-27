@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -65,5 +66,24 @@ public class TransitionManager : MonoBehaviour
         }
         // Đảm bảo kết thúc ở đúng giá trị mục tiêu
         fadePanelCanvasGroup.alpha = targetAlpha;
+    }
+
+    // Hàm mới để chuyển sang Scene khác
+    public void FadeAndLoadScene(string sceneName)
+    {
+        StartCoroutine(LoadSceneSequence(sceneName));
+    }
+
+    IEnumerator LoadSceneSequence(string sceneName)
+    {
+        // 1. Đen màn hình
+        yield return StartCoroutine(Fade(1f));
+
+        // 2. Nạp Scene mới bằng tên
+        SceneManager.LoadScene(sceneName);
+
+        // Lưu ý: Vì Manager có DontDestroyOnLoad, nó sẽ đi theo sang Scene mới.
+        // Khi Scene mới nạp xong, chúng ta làm nó sáng lại.
+        yield return StartCoroutine(Fade(0f));
     }
 }

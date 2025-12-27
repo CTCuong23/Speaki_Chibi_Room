@@ -2,18 +2,26 @@
 
 public class TeleportGate : MonoBehaviour
 {
+    [Header("Dịch chuyển nội bộ (Cùng Scene)")]
     [SerializeField] Transform destination; // Điểm đến (vẫn như cũ)
+
+    [Header("Dịch chuyển sang Scene khác")]
+    [SerializeField] string sceneToLoad; // Gõ tên Scene vào đây (VD: MainScene)
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            // CŨ: Dịch chuyển ngay lập tức gây nhức đầu
-            // collision.transform.position = destination.position;
-
-            // MỚI: Gọi TransitionManager để làm hiệu ứng mượt mà
-            // Chúng ta truyền vào: đối tượng cần dịch chuyển (Speaki) và điểm đến
-            TransitionManager.Instance.FadeAndTeleport(collision.transform, destination);
+            // Nếu có điền tên Scene -> Chuyển Scene
+            if (!string.IsNullOrEmpty(sceneToLoad))
+            {
+                TransitionManager.Instance.FadeAndLoadScene(sceneToLoad);
+            }
+            // Nếu không có tên Scene nhưng có điểm đến -> Dịch chuyển tọa độ
+            else if (destination != null)
+            {
+                TransitionManager.Instance.FadeAndTeleport(collision.transform, destination);
+            }
         }
     }
 }
