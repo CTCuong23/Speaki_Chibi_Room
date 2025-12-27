@@ -574,7 +574,7 @@ Transform:
   m_GameObject: {fileID: 498595864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.20141, y: -0.3180176, z: 0}
+  m_LocalPosition: {x: 35.91, y: -0.3180176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -594,6 +594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hintText: {fileID: 2010181676}
   interactSound: {fileID: 8300000, guid: 33f70a3f5f18cfc4d8e12e40315a9801, type: 3}
+  emotePrefab: {fileID: 4019452441151264078, guid: 080f923a4f5acb5429ecfa017e5213d6, type: 3}
+  spawnPoint: {fileID: 1758402072}
 --- !u!82 &498595869
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1032,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5259041598454434321, guid: 9759344cd25b4994c9cc6c0854999f4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.35
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 5259041598454434321, guid: 9759344cd25b4994c9cc6c0854999f4c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1428,7 +1430,8 @@ Transform:
   m_LocalPosition: {x: -5.007781, y: -0.47398, z: 0}
   m_LocalScale: {x: 0.42017, y: 0.42017, z: 0.42017}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1758402072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1217664024
@@ -1784,6 +1787,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1758402071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1758402072}
+  m_Layer: 0
+  m_Name: spawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1758402072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758402071}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.56, y: 2.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1217664023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761000776
 GameObject:
