@@ -191,6 +191,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &196704263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 196704265}
+  - component: {fileID: 196704264}
+  m_Layer: 0
+  m_Name: InteractionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &196704264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196704263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df3334cb703b2646a141d931f4bcf18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &196704265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196704263}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 96.56587, y: 9.687232, z: -0.016273778}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &199855505
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +484,7 @@ MonoBehaviour:
   videoPanel: {fileID: 550382737}
   videoPlayer: {fileID: 1410745478}
   interactionHint: {fileID: 1179838250}
+  displayImage: {fileID: 1410745479}
 --- !u!58 &357043159
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1431,7 +1476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2136328829}
+      - m_Target: {fileID: 196704264}
         m_TargetAssemblyTypeName: InteractionManager, Assembly-CSharp
         m_MethodName: CloseActiveVideo
         m_Mode: 1
@@ -2168,10 +2213,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 611601734174788259, guid: db540212180908d4b871f4b00586a400, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2136328829}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db540212180908d4b871f4b00586a400, type: 3}
 --- !u!1 &1148825285
 GameObject:
@@ -4314,6 +4356,7 @@ MonoBehaviour:
   videoPanel: {fileID: 550382737}
   videoPlayer: {fileID: 1410745478}
   interactionHint: {fileID: 1179838250}
+  displayImage: {fileID: 1410745479}
 --- !u!58 &2071993101
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4511,23 +4554,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f940c78552fce0443954d4d584083b62, type: 3}
---- !u!1 &2136328826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 611601734174788259, guid: db540212180908d4b871f4b00586a400, type: 3}
-  m_PrefabInstance: {fileID: 1120781843}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2136328829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136328826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8df3334cb703b2646a141d931f4bcf18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &57948842459822049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4908,3 +4934,4 @@ SceneRoots:
   - {fileID: 1120781843}
   - {fileID: 1998026026}
   - {fileID: 584373254}
+  - {fileID: 196704265}
