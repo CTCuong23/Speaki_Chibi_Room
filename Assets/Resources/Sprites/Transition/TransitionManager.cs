@@ -54,6 +54,9 @@ public class TransitionManager : MonoBehaviour
     // Hàm xử lý việc thay đổi Alpha
     IEnumerator Fade(float targetAlpha)
     {
+        // Kiểm tra xem cái Fader có còn tồn tại không trước khi chạy
+        if (fadePanelCanvasGroup == null) yield break;
+
         float startAlpha = fadePanelCanvasGroup.alpha;
         float time = 0;
 
