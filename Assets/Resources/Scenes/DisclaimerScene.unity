@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faderGroup: {fileID: 856501111}
-  waitTime: 4
+  waitTime: 7
 --- !u!4 &642882766
 Transform:
   m_ObjectHideFlags: 0
